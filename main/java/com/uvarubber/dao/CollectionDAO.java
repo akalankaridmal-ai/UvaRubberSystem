@@ -81,9 +81,9 @@ public class CollectionDAO {
                 "FROM daily_collections c " +
                 "JOIN suppliers s ON c.supplier_id = s.supplier_id " +
                 "WHERE c.collection_date BETWEEN ? AND ? " +
-                "GROUP BY s.supplier_id";
+                "GROUP BY s.supplier_id, s.supplier_name, s.bank_name, s.account_no";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = com.uvarubber.util.DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, startDate);
