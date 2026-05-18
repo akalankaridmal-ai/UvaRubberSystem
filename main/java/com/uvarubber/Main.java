@@ -1,6 +1,5 @@
 package com.uvarubber;
 
-// These imports are CRITICAL now that your folders are organized
 import com.uvarubber.model.Supplier;
 import com.uvarubber.service.RubberService;
 import com.uvarubber.dao.SupplierDAO;
@@ -9,7 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Initialize our tools
+        
         SupplierDAO supplierDao = new SupplierDAO();
         CollectionDAO collectionDao = new CollectionDAO();
         RubberService rubberService = new RubberService();
@@ -22,7 +21,7 @@ public class Main {
             return;
         }
 
-        // 3. Let's simulate collecting rubber for the first farmer in your list
+        // 3. Simulate collecting rubber for the first farmer in your list
         Supplier selectedFarmer = allFarmers.get(0);
         double litersCollected = 45.5;
         int metrolacReading = 120;
@@ -45,7 +44,7 @@ public class Main {
                 dryKg
         );
         // 6. Launch the Graphical Interface
-        // We wrap this in 'invokeLater' to ensure the UI runs smoothly on its own thread
+        // Wrap this in 'invokeLater' to ensure the UI runs smoothly on its own thread
         javax.swing.SwingUtilities.invokeLater(() -> {
             new com.uvarubber.view.LoginFrame().setVisible(true);
         });
